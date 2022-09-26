@@ -1,0 +1,514 @@
+@font-face {
+    font-family: Achafsex;
+    src: url(../font/Achafsex.ttf);
+}
+body{
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 900px;
+    background-image: url(../img/ahorcado.jpg);
+    background-size: cover;
+    background-size: 1854px 900px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-color: black;
+}
+/* nav */
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 40px;
+    margin-top: 40px;
+}
+.audioRep{
+    margin-right: 20px;
+}
+#playBtn, #pauseBtn{
+    background: none;
+    border: none;
+    width: 40px;
+}
+/* head */
+h1{
+    color: wheat;
+    text-align: center;
+    font-size: 7em;
+    font-family: Achafsex ;
+    text-shadow: 3px 3px 2px black;
+}
+.mydiv {
+	position: relative;
+	margin:auto ;
+    width: 80%;
+    border-radius: 22px;
+}
+
+.animate-bg:before, .animate-bg:after {
+	content: '';
+	position: absolute;
+	left: -8px;
+	top: -8px;
+    border-radius: 22px;
+	background: linear-gradient(120deg,black, gray);
+    opacity: 0.2;
+	background-size: 300%;
+	width: calc(100% + 16px);
+	height: calc(100% + 16px);
+	z-index: -1;
+	animation: BGgradient 15s ease infinite; 
+}
+
+@keyframes BGgradient {
+	0% {
+		background-position: 0% 200%;
+	}
+	50% {
+		background-position: 200% 0%;
+	}
+	100% {
+		background-position: 0% 330%;
+	}
+}
+
+.animate-bg:after {
+	filter: brightness(1.4);
+	filter: drop-shadow(16px 16px 20px rgb(248, 220, 97));
+	filter: blur(15px);
+}
+/*Cuerpo */
+#menuInicio{
+    height: 750px;
+}
+/* botones primarios */
+.boton{
+    color: white;
+    font-size: large;
+    cursor: pointer;
+    padding: 10px;
+    margin-top: 15px;
+    border: 1px solid darkorange;
+    border-radius: 22px;
+    text-align: center;
+    background-color: black;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    justify-content: center;
+    transition: ease-in-out 0.2s;
+}
+
+#empezar{
+    margin: 10px auto;
+    color: white;
+    display: block;
+    width: 350px;
+    padding: 35px 70px;
+    font-size: 25px;
+    opacity: .8;
+
+}
+#empezar:hover{
+    transform: scale(1.1);
+}
+#anhadir{
+    color: darkorange;
+    background-color: white;
+    width: 350px;
+    padding: 15px 70px;
+    font-size: 20px;
+    margin: 10px auto;
+    opacity: .8;
+}
+#anhadir:hover{
+    transform: scale(1.1);
+}
+
+.boton{
+    color: darkorange;
+    font-size: large;
+    cursor: pointer;
+    padding: 10px;
+    margin-top: 15px;
+    border: 1px solid darkorange;
+    border-radius: 22px;
+    text-align: center;
+    background-color: black;
+    padding-left: 10%;
+    padding-right: 10%;
+    transition: ease-in-out 0.2s;
+}
+
+/* teclado */
+.teclado{
+    display: flex;
+    width:1200px;
+    height:auto;
+    text-align: center;
+    justify-content: center;
+    background-color:#020024 ;
+    opacity: .8;
+    margin-left: 2.5rem;
+}
+
+.teclas{
+    width:45%;
+    height:100%;
+
+}
+.tecla{
+    padding:11px 16px;
+    margin: 0.7%;
+    font-family: 'Fredoka One', cursive;
+    font-family: 'Montserrat', sans-serif;
+    background:transparent;
+    font-weight: bold;
+    color:#ffdbb8;
+    border:2px solid #ffdbb8;
+    border-radius:10px;
+}
+/*Pantalla de dubijo*/
+#plantilla{
+    margin-left: 2.5rem;
+    width: 1200px;
+    height:800px;
+    opacity: 0.8;
+  }
+#inciarTablero{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+/*Texto erroneo*/
+#wrongText{
+    display: none;
+    width: 1200px;
+    height: 32px;
+    border: none;
+    resize: none;
+    overflow: hidden;
+    font-size: 30px;
+    background-color: #020024;
+}
+.text{
+    color: aliceblue;
+    text-align: center;
+    letter-spacing: 60px;
+    font-size: 60px;
+    resize: none;
+    height: 70px;
+}
+/* añadir palabra */
+#nuevaPalabra{
+    text-align: center;
+    display: none;
+    width: 80%;
+    margin: 8% auto; 
+}
+::placeholder{color: darkorange;}
+#nuevaPalabra #nuevoTexto{
+    border: none;
+    color: white;
+    background-color: transparent;
+    outline: none;
+    resize: none;
+    font-size: 30px;
+    text-align: center;
+}
+
+/*botones de añadir palabra*/
+#botonNewText{
+    display: flex;
+    justify-content: center;
+}
+#save{
+    margin-left: 20px;
+    padding: 10px 80px;
+    box-sizing: border-box; 
+    margin-right: 20px;
+    opacity: .8;
+    display: flex;
+    justify-content: center;
+}
+#cancel{
+    margin-right: 20px;
+    margin-left: 20px;
+    color: darkorange;
+    background-color: white;
+    padding: 10px 120px;
+    box-sizing: border-box;
+    opacity: .8;
+}
+div{
+    text-align: center;
+}
+#exclamation{
+    text-align: left;
+    margin-left: 230px;
+    font-size: 25px;
+    color: darkorange;
+    width: 300px;
+    text-align: center;
+}
+#exclamation p{
+    display: flex;
+    border-radius: 22px;
+
+    background-color: rgba(255, 255, 255, 0.2);
+    justify-content: center;
+    align-items: center;
+}
+
+/*botones nuevo juego y desistir*/
+#newGame{
+    margin-left: 20px;
+    padding: 10px 80px;
+    box-sizing: border-box; 
+    margin-right: 20px;
+    opacity: .8;
+    display: flex;
+    justify-content: center;
+}
+#desist{
+    margin-right: 20px;
+    margin-left: 20px;
+    color: darkorange;
+    background-color: white;
+    padding: 10px 120px;
+    box-sizing: border-box;
+    opacity: .8;
+}
+
+
+/*Pie de Pagina*/
+.logoLink{
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+}
+footer{
+    background-color: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    color: #FFFFFF;
+    height:99px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+footer p {
+    color: white;
+    text-shadow: 18px 24px 20px -8px rgba(159, 25, 177, 0.302);
+}
+
+
+/*Media Query*/
+/*celular*/
+@media all and (min-width:350px) and (max-width:475px){
+    body{
+        max-width: 475px;
+        width: 100%;
+        background-size: 475px 845px;
+    }
+    .nav-bar{
+        max-width: 475px;
+        width: 100%;
+        margin: 10px;
+    }
+    #menuInicio{
+        max-width: 475px;
+        width: 100%;
+    }
+    h1{
+        font-size: 4em;
+    }
+    #iniciarTablero{
+        width: 100%;
+        max-width: 475px;
+    }
+    canvas{
+        max-width: 455px;
+        width: 100%;
+        height: 675px;
+    }
+    #plantilla{
+        margin-left: 5px;
+    }
+    .teclado{
+        max-width: 455px;
+        width: 100%;
+        margin-left: 5px;
+    }
+    .teclas{
+        width: 80%;
+    }
+    .teclas button{
+        width: 35px;
+    }
+    #botonNewText{
+        max-width: 475px;
+        width: 100%;
+        flex-direction: column;
+    }
+    #nuevaPalabra{
+        max-width: 475px;
+        width: 100%;
+        height: 672px;
+    }
+    #nuevoTexto{
+        max-width: 455px;
+        width: 100%;
+
+    }
+    #exclamation{
+        margin: 10px;
+    }
+}
+
+
+/*tablet*/
+@media all and (max-width:1479px){
+    body{
+        max-width: 1479px;
+        width: 100%;
+        background-size: 1479px 845px;
+    }
+    .nav-bar{
+        max-width: 1479px;
+        width: 100%;
+        margin: 10px;
+    }
+    #menuInicio{
+        max-width: 1479px;
+        width: 100%;
+    }
+    h1{
+        font-size: 6em;
+    }
+    #iniciarTablero{
+        width: 100%;
+        max-width: 1479px;
+    }
+    canvas{
+        max-width: 1200px;
+        width: 100%;
+        height: 675px;
+        
+    }
+
+    #plantilla{
+        margin-left: 5px;
+        max-width: 1200px;
+        width: 100%;
+        display: flex;
+    }
+    .teclado{
+        max-width: 1200px;
+        width: 100%;
+        margin-left: 5px;
+    }
+    .teclas{
+        max-width: 1200px;
+        width: 36%;
+    }
+    .teclas button{
+        width: 35px;
+    }
+
+    #nuevaPalabra{
+        max-width: 80%;
+        width: 100%;
+        height: 672px;
+    }
+    #nuevoTexto{
+        max-width: 1479px;
+        width: 100%;
+
+    }
+    #exclamation{
+        margin: 10px;
+    }
+}
+@media all and (min-width:350px) and (max-width:1046px){
+
+    h1{
+        font-size: 4em;
+    }
+    .teclas{
+        max-width: 1046px;
+        width: 90%;
+    }
+    .teclas button{
+        width: 35px;
+    }
+    #botonNewText{
+        max-width: 1046px;
+        width: 100%;
+        flex-direction: column;
+    }
+}
+/* Otros dispositivos */
+@media all and (min-width:200px) and (max-width:348px){
+    body{
+        max-width: 348px;
+        width: 100%;
+        background-size: 348px 845px;
+    }
+    .nav-bar{
+        max-width: 348px;
+        width: 100%;
+        margin: 10px;
+    }
+    #menuInicio{
+        max-width: 348px;
+        width: 100%;
+    }
+    h1{
+        font-size: 3em;
+    }
+    #iniciarTablero{
+        width: 100%;
+        max-width: 340px;
+    }
+    canvas{
+        max-width: 335px;
+        width: 100%;
+        height: 675px;
+    }
+    #plantilla{
+        margin-left: 5px;
+    }
+    .teclado{
+        max-width: 335px;
+        width: 100%;
+        margin-left: 5px;
+    }
+    .teclas{
+        width: 80%;
+    }
+    .teclas button{
+        width: 35px;
+    }
+    #botonNewText{
+        max-width: 320px;
+        width: 100%;
+        flex-direction: column;
+    }
+    #nuevaPalabra{
+        max-width: 348px;
+        width: 100%;
+        height: 672px;
+    }
+    #nuevoTexto{
+        max-width: 335px;
+        width: 100%;
+
+    }
+    #exclamation{
+        margin: 10px;
+    }
+}    

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos/reset.css">
+    <link rel="stylesheet" href="estilos/estilo.css">
+    <title>Prueba</title>
+</head>
+<body>
+    <header class="nav-bar">
+        <a href="index.html"><img id="icon" src="svg/Vector.svg" alt="Logo de Alura" title="alura"/></a>
+        <div class="audioRep">
+            <button id="playBtn"><img src="img/play.png" alt="" width="35px"></button>
+            <button id="pauseBtn"><img src="img/pause.png" alt="" width="35px"></button>
+        </div>
+    </header>
+
+    <main id="menuInicio">
+        <div class="mydiv animate-bg" id="titulo"><h1> Bienvenido Al Juego Del Ahorcado</h1></div>
+        <div id="incio">
+            <button id="empezar" class="boton" onclick="inicioJuego()">Empezemos</button>
+            <button id="anhadir" class="boton" onclick="anhadirPalabra()">Añadir nuevas palabras</button>
+        </div>
+    </main>
+
+    <section id="inciarTablero">
+        <div id="pantallaDibujo">
+            <div id="tableroDibujo"><canvas width="1200px", height="800px" id="plantilla"></canvas></div>
+        </div>
+        <div>
+            <textarea id="wrongText" class="text" spellcheck="false" readonly="true"></textarea>
+        </div>
+        <div class="palabra">
+            <ol class="letras">
+            </ol>
+        </div>
+        <div class="teclado">
+            <ol class="teclas">
+
+            </ol>
+        </div>
+        <div id="botonNewText">
+            <button  id="newGame" class="boton" type="reset">Nuevo juego</button>
+            <button  id="desist" class="boton">Desistir</button>
+        </div>
+    </section>
+    <section>   
+
+    </section>
+    <section id="nuevaPalabra">
+        <div>
+            <textarea id="nuevoTexto" autofocus="autofocus" spellcheck="false" rows="7" cols="50" placeholder="Ingrese nueva palabra" maxlength="8" ></textarea>
+            <div id="exclamation">
+                <p><img src="img/warning.png"/> Máx. de 8 letras</p>
+            </div>
+            <div id="botonNewText">
+                <button  id="save" class="boton">Guardar y Empezar</button>
+                <button  id="cancel" class="boton">Cancelar</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div>
+            <p>Andrés Felipe Gómez Pinzón - ING.Electrónico - ONE Challenge ||<a href="https://www.linkedin.com/in/andrés-gómez/"><img src="img/linked.png" alt="logo linkedln" class="logoLink"></a><a href="https://github.com/andresgomez-77"><img src="img/github.png" alt="logo github" class="logoLink"></a> </p>
+        </div>
+    </footer>
+    <script src="js/audioPlay.js"></script>
+    <script src="js/codigo.js"></script>
+    <script src="js/teclado.js"></script>
+    <script src="js/dibujoahorcado.js"></script>
+</body>
+</html>
